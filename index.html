@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Sticky Navbar</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: sans-serif;
+      min-height: 2000px; /* Scroll ke liye */
+    }
+
+    nav {
+      position: sticky;
+      top: 0;
+      background-color: #333;
+      padding: 15px 30px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      z-index: 100;
+    }
+
+    nav .logo {
+      color: white;
+      font-size: 24px;
+      font-weight: bold;
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 20px;
+    }
+
+    nav ul li {
+      position: relative;
+    }
+
+    nav ul li a {
+      color: white;
+      text-decoration: none;
+      font-size: 16px;
+      padding: 8px;
+      transition: background 0.3s;
+    }
+
+    nav ul li a:hover {
+      background-color: #555;
+      border-radius: 5px;
+    }
+
+    /* Dropdown menu */
+    nav ul li .dropdown {
+      position: absolute;
+      top: 35px;
+      left: 0;
+      background-color: #444;
+      display: none;
+      flex-direction: column;
+      min-width: 150px;
+      border-radius: 5px;
+      overflow: hidden;
+    }
+
+    nav ul li:hover .dropdown {
+      display: flex;
+    }
+
+    nav ul li .dropdown a {
+      padding: 10px;
+      color: white;
+    }
+
+    nav ul li .dropdown a:hover {
+      background-color: #666;
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <div class="logo">MySite</div>
+    <ul>
+      <li><a href="#">Home</a></li>
+      <li><a href="#">About</a></li>
+      <li>
+        <a href="#">Services ⬇</a>
+        <div class="dropdown">
+          <a href="#">Web Design</a>
+          <a href="#">SEO</a>
+          <a href="#">Marketing</a>
+        </div>
+      </li>
+      <li><a href="#">Contact</a></li>
+    </ul>
+  </nav>
+
+  <div style="padding: 50px;">
+    <h2>Scroll down to see sticky navbar in action!</h2>
+    <p>More content here...</p>
+  </div>
+
+</body>
+</html>
